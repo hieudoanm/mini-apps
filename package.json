@@ -1,0 +1,41 @@
+{
+  "name": "mini-apps",
+  "version": "0.0.1",
+  "description": "Mini Apps",
+  "main": "index.js",
+  "repository": "git@github.com:hieudoanm/mini-apps.git",
+  "author": "hieudoanm <hieumdoan@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build:coins": "yarn workspace coins build",
+    "build:countries": "yarn workspace countries build",
+    "build:status": "yarn workspace status build",
+    "build": "yarn build:coins && yarn build:countries && yarn build:status",
+    "dev:coins": "yarn workspace coins dev",
+    "dev:countries": "yarn workspace countries dev",
+    "dev:status": "yarn workspace status dev",
+    "dev": "concurrently --kill-others-on-fail \"yarn dev:coins\" \"yarn dev:countries\" \"yarn dev:status\"",
+    "export:coins": "yarn workspace coins export",
+    "export:countries": "yarn workspace countries export",
+    "export:status": "yarn workspace status export",
+    "export": "yarn export:coins && yarn export:countries && yarn export:status",
+    "lint:coins": "yarn workspace coins lint",
+    "lint:countries": "yarn workspace countries lint",
+    "lint:status": "yarn workspace status lint",
+    "lint": "yarn lint:coins && yarn lint:countries && yarn lint:status",
+    "test:coins": "yarn workspace coins test",
+    "test:countries": "yarn workspace countries test",
+    "test:status": "yarn workspace status test",
+    "test": "yarn test:status"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1",
+    "husky": "^8.0.1",
+    "prettier": "^2.6.2",
+    "pretty-quick": "^3.1.3"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

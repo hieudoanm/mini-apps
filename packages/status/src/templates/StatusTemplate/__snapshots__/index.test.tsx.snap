@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatusTemplate render default 1`] = `
+<div>
+  <div
+    class="w-screen-h-screen overflow-hidden"
+  >
+    <div
+      class="grid grid-cols-1 md:grid-cols-2"
+    >
+      <div
+        class="h-screen"
+      >
+        <div
+          class="w-full h-full bg-cover bg-center bg-black"
+          style="background-image: url(https://raw.githubusercontent.com/hieudoanm/app-status/master/public/images/background.jpg);"
+        />
+      </div>
+      <div
+        class="fixed md:relative h-screen overflow-y-auto z-10 top-0 left-0 w-full"
+      >
+        <div
+          class="p-8 bg-black/50 md:bg-white text-white md:text-black"
+        >
+          <div
+            class="border rounded"
+          >
+            <div
+              class="p-4"
+            >
+              <h1
+                class="uppercase text-center font-semibold"
+              >
+                status
+              </h1>
+            </div>
+            <div>
+              <div />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
