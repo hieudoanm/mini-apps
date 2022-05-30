@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button render default 1`] = `
+<div>
+  <button
+    class="rounded bg-red-500 text-white px-2 py-1 text-sm"
+    type="button"
+  >
+    Button
+  </button>
+</div>
+`;

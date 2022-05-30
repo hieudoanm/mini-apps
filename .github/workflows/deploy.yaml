@@ -1,0 +1,51 @@
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  github-actions:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # node-version: [16.x, 14.x, 12.x]
+        # os: [ubuntu-latest, macos-latest, windows-latest]
+        node-version: [16.x]
+        os: [ubuntu-latest]
+    name: Node.js ${{ matrix.node-version }} ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Dependencies
+        run: yarn install
+      - name: Unit Test
+        run: yarn test
+      - name: Build Next
+        run: yarn build
+      - name: Export Out
+        run: yarn export
+        env:
+          CI: true
+          NODE_ENV: production
+      - name: Create docs
+        run: mkdir docs
+      - name: Copy Coins to Docs
+        run: cp -R packages/coins/out docs/coins
+      - name: Copy Countries to Docs
+        run: cp -R packages/countries/out docs/countries
+      - name: Copy Status to Docs
+        run: cp -R packages/status/out docs/status
+      - name: Disable Jekyll
+        run: touch docs/.nojekyll
+      - name: Deploy GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          token: ${{ secrets.GH_PAGES }}
+          branch: gh-pages
+          folder: docs
+          clean: true
