@@ -30,7 +30,7 @@
     "test": "yarn test:coins && yarn test:status"
   },
   "devDependencies": {
-    "concurrently": "^7.2.1",
+    "concurrently": "7.2.2",
     "husky": "^8.0.1",
     "prettier": "^2.6.2",
     "pretty-quick": "^3.1.3"
