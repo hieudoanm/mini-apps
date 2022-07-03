@@ -43,6 +43,8 @@ jobs:
         run: cp -R packages/countries/out docs/countries
       - name: Copy Forex to Docs
         run: cp -R packages/forex/out docs/forex
+      - name: Copy Pomodoro to Docs
+        run: cp -R packages/pomodoro/out docs/pomodoro
       - name: Copy Status to Docs
         run: cp -R packages/status/out docs/status
       - name: Disable Jekyll

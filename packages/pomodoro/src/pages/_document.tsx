@@ -3,12 +3,12 @@ import { Html, Head, Main, NextScript } from 'next/document';
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 const Document = () => {
-  const assetPrefix = NODE_ENV === 'production' ? '/mini-apps/status' : '';
+  const assetPrefix = NODE_ENV === 'production' ? '/mini-apps/pomodoro' : '';
 
   return (
     <Html lang="en">
       <Head>
-        <meta name="description" content="Status" />
+        <meta name="description" content="Pomodoro" />
         <link
           rel="icon"
           type="image/x-icon"
