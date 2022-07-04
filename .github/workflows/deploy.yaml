@@ -21,6 +21,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Install Docsify CLI
+        run: yarn global add docsify-cli
+      - name: Bundle Docs
+        run: docsify init docs
       - name: Install Dependencies
         run: yarn install
       - name: Build Next
@@ -35,8 +39,6 @@ jobs:
           NODE_ENV: production
           NEXT_PUBLIC_COIN_RANKING_KEY: ${{ secrets.NEXT_PUBLIC_COIN_RANKING_KEY }}
           NEXT_PUBLIC_FIXER_KEY: ${{ secrets.NEXT_PUBLIC_FIXER_KEY }}
-      - name: Create docs
-        run: mkdir docs
       - name: Copy Coins to Docs
         run: cp -R packages/coins/out docs/coins
       - name: Copy Countries to Docs

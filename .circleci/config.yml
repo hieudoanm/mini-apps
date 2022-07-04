@@ -13,9 +13,6 @@ jobs:
       - run:
           name: 'Build Production'
           command: yarn build
-      - store_artifacts:
-          path: ./dist
-          destination: build
   test:
     docker:
       - image: node:16
@@ -28,8 +25,6 @@ jobs:
       - run:
           name: 'Unit Tests'
           command: yarn test
-      - store_test_results:
-          path: ./coverage
 
 workflows:
   version: 2

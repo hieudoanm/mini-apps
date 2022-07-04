@@ -1,5 +1,5 @@
+import { useAxios } from 'shared';
 import { Service, ServiceAPI } from '../../../configs';
-import useAxios from '../../../hooks/useAxios';
 import LoadingStatus from '../../molecules/LoadingStatus';
 
 const Trello: React.FC = () => {

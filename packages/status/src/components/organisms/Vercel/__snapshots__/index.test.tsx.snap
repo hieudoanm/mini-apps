@@ -30,10 +30,14 @@ exports[`Vercel render default 1`] = `
         </div>
       </div>
       <button
-        class="rounded bg-red-500 text-white px-2 py-1 text-sm"
+        class="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root  css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+        tabindex="0"
         type="button"
       >
         Refresh
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
       </button>
     </div>
   </div>

@@ -1,6 +1,6 @@
 import React from 'react';
+import { usdFormatter } from 'shared';
 import { Coin } from '../../types';
-import { currencyFormatter } from '../../utils/currency-formatter';
 import List from '../List';
 
 const Coins: React.FC<{ coins: Coin[] }> = ({ coins = [] }) => {
@@ -22,10 +22,10 @@ const Coins: React.FC<{ coins: Coin[] }> = ({ coins = [] }) => {
               </div>
               <div className="text-right">
                 <span className="block sm:inline">
-                  <b>{currencyFormatter(parseFloat(price))}</b>
+                  <b>{usdFormatter(parseFloat(price))}</b>
                 </span>
                 <span className="block sm:inline ml-1">
-                  <small>({currencyFormatter(parseFloat(marketCap))})</small>
+                  <small>({usdFormatter(parseFloat(marketCap))})</small>
                 </span>
               </div>
             </div>

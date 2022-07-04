@@ -6,11 +6,11 @@ import Select from '@mui/material/Select';
 import get from 'lodash/get';
 import type { NextPage } from 'next';
 import React, { useState } from 'react';
+import { useAxios } from 'shared';
 import Coins from '../components/Coins';
 import Container from '../components/Container';
 import List from '../components/List';
 import Navbar from '../components/Navbar';
-import useAxios from '../hooks/useAxios';
 import { Coin, Tag } from '../types';
 
 const Home: NextPage = () => {

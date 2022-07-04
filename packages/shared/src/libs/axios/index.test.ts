@@ -5,7 +5,7 @@ jest.mock('axios');
 
 describe('axios', () => {
   describe('get', () => {
-    it('should return success', async () => {
+    it('success', async () => {
       jest
         .spyOn(axios, 'get')
         .mockResolvedValueOnce({ data: { status: 'success' } });

@@ -1,13 +1,11 @@
 import get from 'lodash/get';
 import { useEffect, useState } from 'react';
+import { useAxios } from 'shared';
 import { currencies } from '../../../constants';
-import { useAxios } from '../../../hooks/useAxios';
 import { ForexRate } from '../../../types';
 import Container from '../../atoms/Container';
 import List from '../../molecules/List';
 import Rates from '../../molecules/Rates';
-
-const NEXT_PUBLIC_FIXER_KEY: string = process.env.NEXT_PUBLIC_FIXER_KEY || '';
 
 const AxiosRates: React.FC = () => {
   const url = `https://proxy-as-as-service.vercel.app/api/forex`;

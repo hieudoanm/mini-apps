@@ -1,6 +1,6 @@
 import isNil from 'lodash/isNil';
+import { vndFormatter } from 'shared';
 import { ForexRate } from '../../../types';
-import { currencyFormatter } from '../../../utils/currency-formatter';
 import List from '../List';
 
 const Rates: React.FC<{ rates: ForexRate[] }> = ({ rates }) => {
@@ -22,7 +22,7 @@ const Rates: React.FC<{ rates: ForexRate[] }> = ({ rates }) => {
                   <span className="hidden sm:inline ml-1"> - {currency}</span>
                 )}
               </div>
-              <div>{currencyFormatter(rate)}</div>
+              <div>{vndFormatter(rate)}</div>
             </div>
           </List.Item>
         );

@@ -1,5 +1,5 @@
+import Button from '@mui/material/Button';
 import React from 'react';
-import Button from '../Button';
 
 export type StatusProps = {
   bgColor: string;
@@ -24,7 +24,7 @@ const Status: React.FC<StatusProps> = ({
             <div className={`rounded-full w-3 h-3 md:w-4 md:h-4 ${bgColor}`} />
           </div>
         </div>
-        <Button type="button" onClick={refetch}>
+        <Button type="button" onClick={refetch} variant="outlined">
           Refresh
         </Button>
       </div>

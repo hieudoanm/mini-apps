@@ -1,16 +1,18 @@
 import { AxiosRequestConfig } from 'axios';
 import { useCallback, useEffect, useState } from 'react';
-import { axiosGet } from '../../utils/axios';
+import { axiosGet } from '../../libs/axios';
 
-const useAxios = <T>(
+type UseAxios<T> = { loading: boolean; error: any; data: T | null };
+
+export const useAxios = <T>(
   url: string,
   configs: AxiosRequestConfig = {}
-): { loading: boolean; error: any; data: T | null; refetch: () => void } => {
-  const [state, setState] = useState<{
-    loading: boolean;
-    error: any;
-    data: T | null;
-  }>({ loading: false, error: null, data: null });
+): UseAxios<T> & { refetch: () => void } => {
+  const [state, setState] = useState<UseAxios<T>>({
+    loading: false,
+    error: null,
+    data: null,
+  });
 
   const [refetchIndex, setRefetchIndex] = useState<number>(0);
 
@@ -28,7 +30,6 @@ const useAxios = <T>(
       }
     };
     getData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [refetchIndex]);
 
   return { ...state, refetch };
