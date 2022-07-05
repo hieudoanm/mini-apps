@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import { appName } from '../configs';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -8,7 +9,7 @@ const Document = () => {
   return (
     <Html lang="en">
       <Head>
-        <meta name="description" content="Pomodoro" />
+        <meta name="description" content={appName} />
         <link
           rel="icon"
           type="image/x-icon"
