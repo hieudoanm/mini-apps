@@ -1,5 +1,5 @@
 {
-  "name": "shared",
+  "name": "@package/shared",
   "version": "0.0.1",
   "description": "Shared",
   "main": "dist/index.js",
@@ -15,7 +15,11 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint . --ext .tsx",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "yarn build",
+    "postpack": "yarn build",
+    "prepack": "yarn build",
+    "prepare": "yarn build"
   },
   "dependencies": {
     "react": "18.2.0",
