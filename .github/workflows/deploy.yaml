@@ -38,15 +38,15 @@ jobs:
           NEXT_PUBLIC_COIN_RANKING_KEY: ${{ secrets.NEXT_PUBLIC_COIN_RANKING_KEY }}
           NEXT_PUBLIC_FIXER_KEY: ${{ secrets.NEXT_PUBLIC_FIXER_KEY }}
       - name: Copy Coins to Docs
-        run: cp -R packages/coins/out docs/coins
+        run: cp -R web/coins/out docs/coins
       - name: Copy Countries to Docs
-        run: cp -R packages/countries/out docs/countries
+        run: cp -R web/countries/out docs/countries
       - name: Copy Forex to Docs
-        run: cp -R packages/forex/out docs/forex
+        run: cp -R web/forex/out docs/forex
       - name: Copy Pomodoro to Docs
-        run: cp -R packages/pomodoro/out docs/pomodoro
+        run: cp -R web/pomodoro/out docs/pomodoro
       - name: Copy Status to Docs
-        run: cp -R packages/status/out docs/status
+        run: cp -R web/status/out docs/status
       - name: Disable Jekyll
         run: touch docs/.nojekyll
       - name: Deploy GitHub Pages
